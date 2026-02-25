@@ -9,7 +9,9 @@ export 'api_manager.dart' show ApiCallResponse;
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class ZenQuotesCall {
-  static Future<ApiCallResponse> call() async {
+  static Future<ApiCallResponse> call({
+    String? quote = '',
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'ZenQuotes',
       apiUrl: 'https://zenquotes.io/api/random/',
